@@ -1,0 +1,4 @@
+requests~=2.32.3
+bitcoin~=1.1.42
+colorama~=0.4.6
+gmpy2~=2.2.0
