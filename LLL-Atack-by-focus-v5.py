@@ -25,7 +25,7 @@ banner_text = '''
 ██║     ██╔══██║   ██║      ██║   ██║██║     ██╔══╝      ██╔══██║   ██║      ██║   ██╔══██║██║     ██╔═██╗ 
 ███████╗██║  ██║   ██║      ██║   ██║╚██████╗███████╗    ██║  ██║   ██║      ██║   ██║  ██║╚██████╗██║  ██╗
 ╚══════╝╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚═╝ ╚═════╝╚══════╝    ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
-[*]LLL-Attack-v5                                                                                                            
+[*]LLL-Attack-v5.1                                                                                                            
 [*]This program receives the raw transaction information of a wallet address and checks the weak points.
 [*]Access to the private key by calculating the matrix. So if there is a weakness in the address transaction,
 [*]you will have access to the wallet. And if there is no weakness, it will delete that address from the list and check the next address
@@ -421,6 +421,11 @@ while wallet_list:
     print(Fore.GREEN + f"[*]Number of transactions: {len(a)}")
     #print(Style.RESET_ALL)
     for tx in a:
+        try:
+            
+            os.remove("SIGNATURES.csv")
+        except:
+            pass
         # print(tx)
         tx.rstrip()
         print(Fore.MAGENTA + f"[*]Try to get R S Z .....")
